@@ -1,12 +1,11 @@
-package com.gumtree.assigment;
+package com.gumtree.assignment;
 
-import com.gumtree.assigment.model.Contact;
-import com.gumtree.assigment.reader.FileReader;
-import com.gumtree.assigment.reader.ReaderImpl;
-import com.sun.jndi.cosnaming.IiopUrl;
+import com.gumtree.assignment.model.AddressBook;
+import com.gumtree.assignment.model.Contact;
+import com.gumtree.assignment.reader.FileReader;
+import com.gumtree.assignment.reader.ReaderImpl;
 
 import java.util.List;
-import java.util.prefs.Preferences;
 
 /**
  * Created by Dilyan B. on 14-5-22.

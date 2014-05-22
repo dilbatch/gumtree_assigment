@@ -1,4 +1,4 @@
-package com.gumtree.assigment.exception;
+package com.gumtree.assignment.exception;
 
 /**
  * Created by Dilyan B. on 14-5-22.

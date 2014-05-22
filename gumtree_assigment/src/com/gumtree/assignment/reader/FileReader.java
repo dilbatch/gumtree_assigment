@@ -1,8 +1,8 @@
-package com.gumtree.assigment.reader;
+package com.gumtree.assignment.reader;
 
-import com.gumtree.assigment.exception.AssignmentException;
-import com.gumtree.assigment.model.Contact;
-import com.gumtree.assigment.util.Utils;
+import com.gumtree.assignment.exception.AssignmentException;
+import com.gumtree.assignment.model.Contact;
+import com.gumtree.assignment.util.Utils;
 
 import java.io.*;
 import java.util.ArrayList;

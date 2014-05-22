@@ -1,6 +1,6 @@
-package com.gumtree.assigment.util;
+package com.gumtree.assignment.util;
 
-import com.gumtree.assigment.exception.AssignmentException;
+import com.gumtree.assignment.exception.AssignmentException;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

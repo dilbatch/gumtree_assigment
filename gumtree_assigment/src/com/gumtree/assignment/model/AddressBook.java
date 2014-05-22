@@ -1,4 +1,4 @@
-package com.gumtree.assigment;
+package com.gumtree.assignment.model;
 
 import java.util.List;
 

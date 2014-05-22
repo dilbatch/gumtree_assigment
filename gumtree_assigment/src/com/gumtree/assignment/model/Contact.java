@@ -1,4 +1,4 @@
-package com.gumtree.assigment.model;
+package com.gumtree.assignment.model;
 
 import java.util.Date;
 
