@@ -33,4 +33,14 @@ public class Contact {
     public void setDate(Date date) {
         this.date = date;
     }
+
+    @Override
+    public boolean equals(Object obj){
+       if (!(obj instanceof Contact)) return false;
+       Contact cont = (Contact)obj;
+       if (!cont.getName().equals(name)) return false;
+       if (!cont.getGender().equals(gender)) return false;
+       if (!cont.getDate().equals(date)) return false;
+       return true;
+    }
 }

@@ -14,14 +14,14 @@ import java.util.List;
 public class FileReader implements ReaderImpl {
 
     @Override
-    public List<Contact> readAddressBook() {
+    public List<Contact> readAddressBook(String path) {
         ArrayList<Contact> result = new ArrayList<Contact>();
 
         FileInputStream fis = null;
         BufferedReader reader = null;
 
         try {
-            fis = new FileInputStream("E:/gumtree_assigment/gumtree_assigment/resources/AddressBook");
+            fis = new FileInputStream(path);
             reader = new BufferedReader(new InputStreamReader(fis));
 
             String line = reader.readLine();
@@ -30,7 +30,7 @@ public class FileReader implements ReaderImpl {
 //                System.out.println(line);
                 i++;
                 String[] lineItems = line.split(",");
-                if (lineItems.length != 3) throw new AssignmentException("Input file has more than 3 elements on line i=" + i);
+                if (lineItems.length != 3) throw new AssignmentException("Input file has not exact 3 elements on line i=" + i);
                 Contact  contact = new Contact();
                 if (lineItems[0] != null) contact.setName(lineItems[0].trim());
                 if (lineItems[1] != null) contact.setGender(lineItems[1].trim());

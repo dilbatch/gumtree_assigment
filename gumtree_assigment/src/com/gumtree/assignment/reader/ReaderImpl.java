@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface ReaderImpl {
 
-    public List<Contact> readAddressBook();
+    public List<Contact> readAddressBook(String path);
 }
