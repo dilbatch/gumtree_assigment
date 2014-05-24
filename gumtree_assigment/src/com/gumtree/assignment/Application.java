@@ -17,9 +17,13 @@ import java.util.concurrent.TimeUnit;
  * Created by Dilyan B. on 14-5-22.
  */
 public class Application {
+     private static String FILE_PATH = "E:/gumtree_assigment/gumtree_assigment/resources/AddressBook";
        public static void main(String[] args){
+           //Alternativly the file full path could be given in the args
+           if (args.length > 0 && args[0] != null)  FILE_PATH = args[0];
+
            ReaderImpl reader = new FileReader();
-           List<Contact> list =  reader.readAddressBook("E:/gumtree_assigment/gumtree_assigment/resources/AddressBook");
+           List<Contact> list =  reader.readAddressBook(FILE_PATH);
 //           for (Contact cont:list){
 //               System.out.println(cont.getName());
 //           }
@@ -47,7 +51,8 @@ public class Application {
 //               System.out.println(cont.getName() + "  " + cont.getGender() + " " + cont.getDate());
 //           }
            System.out.println("2. Who is the oldest person in the address book?");
-           System.out.println("Answer: " + list.get(0).getName());
+           if (list != null && !list.isEmpty()) System.out.println("Answer: " + list.get(0).getName());
+           else  System.out.println("Answer: No items in the given address book");
 
            Date billBirth = null,paulBirth = null;
 
