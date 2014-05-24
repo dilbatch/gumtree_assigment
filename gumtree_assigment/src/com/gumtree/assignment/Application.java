@@ -4,6 +4,8 @@ import com.gumtree.assignment.model.AddressBook;
 import com.gumtree.assignment.model.Contact;
 import com.gumtree.assignment.reader.FileReader;
 import com.gumtree.assignment.reader.ReaderImpl;
+import com.gumtree.assignment.util.OrderCriteria;
+import com.gumtree.assignment.util.Orderable;
 import com.gumtree.assignment.util.SearchCriteria;
 
 import java.util.List;
@@ -29,8 +31,19 @@ public class Application {
 //               Contact cont = (Contact) obj;
 //               System.out.println(cont.getName() + "  " + cont.getGender() + " " + cont.getDate());
 //           }
-           System.out.println("Assigment");
+           System.out.println("Assignment");
            System.out.println("1. How many males are in the address book?");
            System.out.println("Answer: " + result.size());
+
+
+           OrderCriteria orderCriteria = new OrderCriteria();
+           orderCriteria.setName("date");
+           orderCriteria.setOrderMode(Orderable.ASC);
+           addressBook.orderBy(orderCriteria);
+//           for (Contact cont:list){
+//               System.out.println(cont.getName() + "  " + cont.getGender() + " " + cont.getDate());
+//           }
+           System.out.println("2. Who is the oldest person in the address book?");
+           System.out.println("Answer: " + list.get(0).getName());
        }
 }
