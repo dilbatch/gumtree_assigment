@@ -14,10 +14,12 @@ public class Application {
        public static void main(String[] args){
            ReaderImpl reader = new FileReader();
            List<Contact> list =  reader.readAddressBook("E:/gumtree_assigment/gumtree_assigment/resources/AddressBook");
-           for (Contact cont:list){
-               System.out.println(cont.getName());
-           }
+//           for (Contact cont:list){
+//               System.out.println(cont.getName());
+//           }
            AddressBook addressBook = new AddressBook();
            addressBook.setContacts(list);
+
+
        }
 }

@@ -5,6 +5,7 @@ import com.gumtree.assignment.model.Contact;
 import com.gumtree.assignment.reader.FileReader;
 import junit.framework.TestCase;
 import org.junit.Test;
+import test.com.gumtree.Utils;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class FileReaderTestCase extends TestCase {
         expected.add(cont);
         FileReader reader = new FileReader();
         List<Contact> actual = reader.readAddressBook("E:/gumtree_assigment/gumtree_assigment/resources/testAddressBook_4");
-        assertTrue(compareList(expected, actual));
+        assertTrue(Utils.compareList(expected, actual));
     }
 
     @Test(expected = AssignmentException.class)
@@ -51,11 +52,5 @@ public class FileReaderTestCase extends TestCase {
         List<Contact> actual = reader.readAddressBook("E:/gumtree_assigment/gumtree_assigment/resources/testAddressBook_2");
     } 
     
-    private boolean compareList(List list1, List list2){
-        if (list1.size() != list2.size()) return false;
-        for(int i =0; i < list1.size(); i ++) {
-            if (!list1.get(i).equals(list2.get(i)))  return false;
-        }
-        return true;
-    }
+
 }
