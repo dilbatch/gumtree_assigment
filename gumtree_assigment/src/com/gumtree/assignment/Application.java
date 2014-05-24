@@ -7,8 +7,11 @@ import com.gumtree.assignment.reader.ReaderImpl;
 import com.gumtree.assignment.util.OrderCriteria;
 import com.gumtree.assignment.util.Orderable;
 import com.gumtree.assignment.util.SearchCriteria;
+import com.gumtree.assignment.util.Utils;
 
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Dilyan B. on 14-5-22.
@@ -45,5 +48,24 @@ public class Application {
 //           }
            System.out.println("2. Who is the oldest person in the address book?");
            System.out.println("Answer: " + list.get(0).getName());
+
+           Date billBirth = null,paulBirth = null;
+
+           for (Contact cont:list){
+               if (cont.getName().startsWith("Bill")){
+                   billBirth = cont.getDate();
+               }
+               if (cont.getName().startsWith("Paul")){
+                   paulBirth = cont.getDate();
+               }
+
+           }
+
+           System.out.println("2. How many days older is Bill than Paul?");
+           if (paulBirth != null && billBirth != null)
+               System.out.println("Answer: " + Utils.getDateDiff(billBirth, paulBirth, TimeUnit.DAYS) + " days");
+           else
+               System.out.println("Answer: Either Bill or Paul is not in the list");
+
        }
 }
