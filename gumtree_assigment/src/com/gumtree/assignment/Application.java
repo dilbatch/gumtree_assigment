@@ -4,6 +4,7 @@ import com.gumtree.assignment.model.AddressBook;
 import com.gumtree.assignment.model.Contact;
 import com.gumtree.assignment.reader.FileReader;
 import com.gumtree.assignment.reader.ReaderImpl;
+import com.gumtree.assignment.util.SearchCriteria;
 
 import java.util.List;
 
@@ -20,6 +21,16 @@ public class Application {
            AddressBook addressBook = new AddressBook();
            addressBook.setContacts(list);
 
-
+           SearchCriteria criteria = new SearchCriteria();
+           criteria.setName("gender");
+           criteria.setValue("Male");
+           List<Object> result = addressBook.find(criteria);
+//           for (Object obj:result){
+//               Contact cont = (Contact) obj;
+//               System.out.println(cont.getName() + "  " + cont.getGender() + " " + cont.getDate());
+//           }
+           System.out.println("Assigment");
+           System.out.println("1. How many males are in the address book?");
+           System.out.println("Answer: " + result.size());
        }
 }
